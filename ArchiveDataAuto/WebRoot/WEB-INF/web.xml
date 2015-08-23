@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+     <servlet-name>loginAction</servlet-name>
+     <servlet-class>archiveDataAuto.loginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>loginAction</servlet-name>
+     <url-pattern>/loginAction</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>enrollAction</servlet-name>
+     <servlet-class>archiveDataAuto.enrollServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>enrollAction</servlet-name>
+     <url-pattern>/enrollAction</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+     <servlet-name>archiveProgressBarServlet</servlet-name>
+     <servlet-class>archiveDataAuto.archiveProgressBarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>archiveProgressBarServlet</servlet-name>
+     <url-pattern>/archiveProgressBarServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>logServlet</servlet-name>
+     <servlet-class>archiveDataAuto.logServlet</servlet-class>
+     <init-param>
+        <param-name>propfile</param-name>
+        <param-value>/WEB-INF/log.properties</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <filter>  
+    <filter-name>userfilter</filter-name>  
+    <filter-class>archiveDataAuto.userFilter</filter-class>  
+  </filter>  
+  <filter-mapping>  
+    <filter-name>userfilter</filter-name>  
+    <url-pattern>/show_tables.jsp</url-pattern>
+  </filter-mapping> 
+  <filter-mapping>  
+    <filter-name>userfilter</filter-name>  
+    <url-pattern>/show_archive.jsp</url-pattern>
+  </filter-mapping> 
+</web-app>

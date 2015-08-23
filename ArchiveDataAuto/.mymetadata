@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ArchiveDataAuto"
+  id="myeclipse.1398701105441"
+  context-root="/ArchiveDataAuto"
+  j2ee-spec="6.0"
+  archive="ArchiveDataAuto.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

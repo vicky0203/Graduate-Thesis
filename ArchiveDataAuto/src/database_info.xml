@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database_info>
+   <database>
+      <dbtype>oracle</dbtype>
+      <dbidentity>source</dbidentity>
+      <dbhost>127.0.0.1:1521</dbhost>
+      <dbname>TEST</dbname>
+      <dbuser>system</dbuser>
+      <dbpassword>redhat</dbpassword>  
+   </database>  
+   <database>
+      <dbtype>oracle</dbtype>
+      <dbidentity>target</dbidentity>
+      <dbhost>127.0.0.1:1521</dbhost>
+      <dbname>orcl</dbname>
+      <dbuser>system</dbuser>
+      <dbpassword>redhat</dbpassword>
+   </database>
+   <dbtransform> 
+       <tablename>EMPLOYEES</tablename>
+       <colname>LOT</colname>
+       <sourcedata>22</sourcedata> <!-- 被转换的数据信息 若为空表示将所有均转换 -->
+       <transdata>666</transdata> <!-- 转换成的数据信息 -->
+   </dbtransform>
+   <dbtransform> 
+       <tablename></tablename>
+       <colname></colname>
+       <sourcedata></sourcedata> <!-- 被转换的数据信息 若为空表示将所有均转换 -->
+       <transdata></transdata> <!-- 转换成的数据信息 -->
+   </dbtransform>
+<!--    <dbtransform> 
+       <tablename>DEPARTMENTS</tablename>
+       <colname>BUDGET</colname>
+       <sourcedata>100</sourcedata> 被转换的数据信息 若为空表示将所有均转换
+       <transdata>8</transdata> 转换成的数据信息
+   </dbtransform> -->
+   <dbinstruct>
+       <tablename>EMPLOYEES</tablename>
+       <colname>SSN</colname>
+       <condition>&lt;=</condition><!--  小于等于 -->
+       <value>111102098</value>
+   </dbinstruct>
+   <dbinstruct>
+       <tablename>EMPLOYEES</tablename>
+       <colname>LOT</colname>
+       <condition>&lt;=</condition><!--  小于等于 -->
+       <value>27</value>
+   </dbinstruct>
+   <dbinstruct>
+       <tablename>DEPARTMENTS</tablename>
+       <colname>DID</colname>
+       <condition>&lt;</condition>
+       <value>52471</value>
+   </dbinstruct>
+   <dbinstruct>
+       <tablename></tablename>
+       <colname></colname>
+       <condition></condition>
+       <value></value>
+   </dbinstruct>
+</database_info>
